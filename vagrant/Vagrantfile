@@ -1,0 +1,35 @@
+Vagrant::Config.run do |config|
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "precise64"
+
+  # The url from where the 'config.vm.box' box will be fetched if it
+  # doesn't already exist on the user's system.
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+  # First execute the bootstrap script to install base dependecies if needed
+  config.vm.provision :shell, :path => "../scripts/bootstrap.sh"
+
+  # Enable provisioning with chef solo, specifying a cookbooks path, roles
+  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+  # some recipes and/or roles.
+  #
+  config.vm.provision :chef_solo do |chef|
+    
+    chef.cookbooks_path = ["../cookbooks", [:vm, "/var/chef-solo/cookbooks"]]
+  
+    chef.add_recipe "basic_packages"
+  
+    require 'json'
+    open('dna.json', 'w') do |f|
+      chef.json[:run_list] = chef.run_list
+      f.write chef.json.to_json
+    end
+      open('.cookbooks_path.json', 'w') do |f|
+      f.puts JSON.generate([chef.cookbooks_path]
+                             .flatten
+                             .map{|x| x})
+    end
+  end
+
+end
