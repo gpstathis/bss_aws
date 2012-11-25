@@ -1,0 +1,3 @@
+[submodule "ec2/vagrant-ec2"]
+	path = ec2/vagrant-ec2
+	url = git://github.com/lynaghk/vagrant-ec2.git
