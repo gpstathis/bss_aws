@@ -41,7 +41,8 @@ eval ssh ${SSH_OPTIONS} ${instance_address} '/tmp/bootstrap.sh'
 
 echo -e "\nProvisioning instance" \
         "\n===============================================================================\n"
-${DIRNAME}/provision_ec2_instance.sh ${instance_address} ${DIRNAME}/../vagrant-config
+${DIRNAME}/provision_ec2_instance.sh ${instance_address} ${DIRNAME}/../vagrant
 echo -e "\n*******************************************************************************\n" \
         "Instance ready" \
         "\n*******************************************************************************\n"
+        
