@@ -20,6 +20,8 @@ Vagrant::Config.run do |config|
   
     chef.add_recipe "basic_packages"
   
+    # vagrant-ec2 start
+    # this portion of the script is required by the vagrant-ec2 plug-in
     require 'json'
     open('dna.json', 'w') do |f|
       chef.json[:run_list] = chef.run_list
@@ -30,6 +32,7 @@ Vagrant::Config.run do |config|
                              .flatten
                              .map{|x| x})
     end
+    # vagrant-ec2 end
   end
 
 end

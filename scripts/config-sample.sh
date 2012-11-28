@@ -11,10 +11,10 @@ DIRNAME=`dirname ${BASH_SOURCE}`
 ######################
 
 # Java
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+export JAVA_HOME=<path to your Java home>
 
 # EC2 tools
-export EC2_HOME=/opt/ec2-api-tools/ec2-api-tools-current
+export EC2_HOME=<path to ec2-api-tools home>
 export PATH=$PATH:$EC2_HOME/bin
 
 #########################################################################
