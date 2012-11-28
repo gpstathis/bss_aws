@@ -47,4 +47,9 @@ For VirtualBox Provisioning
 + `cd vagrant`
 + `vagrant up`
 
+Thanks
+======
+
+This project was made possible by [vagrant-ec2](https://github.com/lynaghk/vagrant-ec2/) from Keming labs.
+
 
