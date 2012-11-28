@@ -21,8 +21,13 @@ For EC2 Provisioning
 		export AWS_ACCESS_KEY=<your AWS_ACCESS_KEY>
 		export AWS_SECRET_KEY=<your AWS_SECRET_KEY>
 		...
-		export EC2_KEY_PAIR=<path to your pem file>
-		export EC2_KEY_NAME=<your key name> 			
+		export EC2_KEY_PAIR=<path to your key pair file>
+		export EC2_KEY_NAME=<your key name>
+
++ If you need to create a new key pair file, use:
+
+		bash$ ec2-add-keypair --aws-access-key <your AWS_ACCESS_KEY> --aws-secret-key <your AWS_SECRET_KEY> --region us-east-1 ec2-us-east-1-keypair > ~/.ec2/ec2-us-east-1-keypair
+		bash$ chmod 600 ~/.ec2/ec2-us-east-1-keypair	
 
 For VirtualBox Provisioning
 ---------------------------
