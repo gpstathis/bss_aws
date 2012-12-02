@@ -19,6 +19,15 @@ Vagrant::Config.run do |config|
     chef.cookbooks_path = ["../cookbooks", [:vm, "/var/chef-solo/cookbooks"]]
   
     chef.add_recipe "basic_packages"
+    chef.add_recipe "build-essential"
+    chef.add_recipe "mysql::server"
+    
+    chef.json.merge!({
+      :mysql => {
+        :server_root_password => "bsssecret",
+        :server_repl_password => "bsssecret",
+        :server_debian_password => "bsssecret"}
+    })
   
     # vagrant-ec2 start
     # this portion of the script is required by the vagrant-ec2 plug-in
