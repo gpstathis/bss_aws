@@ -28,6 +28,3 @@
 [submodule "cookbooks/memcached"]
 	path = cookbooks/memcached
 	url = git://github.com/opscode-cookbooks/memcached.git
-[submodule "cookbooks/application_ruby"]
-	path = cookbooks/application_ruby
-	url = git://github.com/gpstathis/application_ruby.git
