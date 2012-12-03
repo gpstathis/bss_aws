@@ -24,8 +24,11 @@ Vagrant::Config.run do |config|
     chef.add_recipe "openssl"    
     chef.add_recipe "apache2"
     chef.add_recipe "apt"
+    chef.add_recipe "mysql::server"
     chef.add_recipe "passenger_apache2::mod_rails"
     chef.add_recipe "application"
+    chef.add_recipe "application_ruby"
+    chef.add_recipe "deploy_bss_aws"
     
     # Override node variables here
     chef.json.merge!({
