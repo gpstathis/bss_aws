@@ -10,15 +10,13 @@ if ! test -f "/etc/chef/solo.rb"; then
           "\n===============================================================================\n"  
 
   sudo apt-get update --yes --fix-missing
+	# Hack: Need to do it twice; it seems the first run does no fetch all repos on the EC2 Alestic AMI
+	sudo apt-get update --yes --fix-missing
 
   echo -e "\nInstalling development dependencies and essential tools..." \
           "\n===============================================================================\n"
-  #sudo apt-get install curl bison zlib1g-dev libopenssl-ruby1.9.1 libssl-dev libreadline-dev libncurses5-dev --yes --fix-missing
-  #sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config --yes --fix-missing
-  sudo apt-get install build-essential ruby1.9.3 liberuby-dev rubygems libopenssl-ruby curl bison openssl --yes --fix-missing
-  #sudo apt-get install git-core curl --yes --fix-missing
-  #sudo apt-get install build-essential binutils-doc gcc autoconf flex bison openssl --yes --fix-missing
-  #sudo apt-get install libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libxml2-dev libxslt1-dev libyaml-dev libsqlite3-dev sqlite3 libxslt-dev libc6-dev ncurses-dev automake libtool subversion pkg-config --yes --fix-missing
+  
+	sudo apt-get install ruby1.9.3 libruby1.9.1 ruby1.9.1-dev curl openssl build-essential liberuby-dev --yes --fix-missing
   
   echo -e "\nSetting default ruby and gem..." \
           "\n===============================================================================\n"

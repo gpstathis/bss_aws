@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/10940/SYS/chef_scripts/chef-solo/cookbooks/basic_packages
+END
+metadata.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/10872/SYS/chef_scripts/chef-solo/cookbooks/basic_packages/metadata.rb
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/10872/SYS/chef_scripts/chef-solo/cookbooks/basic_packages/README.md
+END

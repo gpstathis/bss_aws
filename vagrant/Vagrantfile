@@ -18,10 +18,16 @@ Vagrant::Config.run do |config|
     
     chef.cookbooks_path = ["../cookbooks", [:vm, "/var/chef-solo/cookbooks"]]
   
+    # List the recipes here
     chef.add_recipe "basic_packages"
     chef.add_recipe "build-essential"
-    chef.add_recipe "mysql::server"
+    chef.add_recipe "openssl"    
+    chef.add_recipe "apache2"
+    chef.add_recipe "apt"
+    chef.add_recipe "passenger_apache2::mod_rails"
+    chef.add_recipe "application"
     
+    # Override node variables here
     chef.json.merge!({
       :mysql => {
         :server_root_password => "bsssecret",
